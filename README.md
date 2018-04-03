@@ -1,6 +1,9 @@
-# plugins-tutorial
-一些常用插件的配置及使用技巧
-readme作为index导航，单独插件用单独文档展示，方便后期补充完善。
+# Vim 插件教程
+> 一些常用插件的配置及使用技巧
 
-## 一、插件管理
-1. junegunn/vim-plug 多线程，轻量，可靠的vim插件管理程序
+## 插件管理器
+
+插件管理器有很多种，包括 vundle、vim-plug、Neobundle、dein.vim 等等；
+
+- [junegunn/vim-plug](https://github.com/vim-china/plugins-tutorial/blob/master/vim-plug.md)
+> 多线程简约插件管理器
