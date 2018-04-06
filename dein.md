@@ -1,4 +1,4 @@
-原文链接: https://github.com/vim-china
+原文链接: [vim-china/dein.vim](https://github.com/vim-china/plugins-tutorial/blob/master/dein.md)
 
 ## 简介
 
@@ -36,4 +36,6 @@ call dein#add('wsdjeg/ag.vim', {'on_cmd' : 'Ag'})
 
 ## 自动合并插件
 
-这点是我想重点说的。
+默认情况下，dein 会根据插件相对于runtimepath的路径进行插件合并，如何理解这一特性，我们来看下面一个示例：
+
+

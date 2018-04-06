@@ -1,8 +1,7 @@
 # Vim 插件教程
 > 一些常用插件的配置及使用技巧
 
-本文作者: [![GitHub contributors](https://img.shields.io/github/contributors/cdnjs/cdnjs.svg)](https://github.com/vim-china/plugins-tutorial/graphs/contributors)
-
+[![GitHub contributors](https://img.shields.io/github/contributors/cdnjs/cdnjs.svg)](https://github.com/vim-china/plugins-tutorial/graphs/contributors)
 [![Gitter](https://badges.gitter.im/vim-china/Lobby.svg)](https://gitter.im/vim-china/Lobby)
 
 本仓库主要收录一些常用插件的使用教程，不同于帮助文档，专注于实用技巧。欢迎投稿。
