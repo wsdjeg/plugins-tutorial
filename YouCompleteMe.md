@@ -342,3 +342,45 @@ YCM为其选项提供了合适的默认值,但是您可以查看使用与配置�
 - 选择java项目
 - 管理```jdt.ls```服务实例
 
+# 用户指导
+#### 一般用法
+如果补全候选内容太过宽泛,请继续输入字符,YCM会根据你输入的字符修改补全候选内容.
+
+补全过滤是对大小写敏感的是这样的,如果你输入的全是小写字符,则补全内容不会区分大小写,一旦你输入任意一个大写字符,那么补全候选框的内容将会启用大小写敏感.例如"foo"匹配"Foo"和"foo"而"Foo"则只匹配"Foo"和"
+FOO"但是却不会匹配"foo"
+
+Gvim使用```TAB```选择补全框中的第一个补全内容,继续按```Shift-TAB```键则会在补全候选框中进行循环选择.**注意**如果你使用的是console Vim(即终端vim)那么```Shift-Tab```可能无法切换,因为console无法将其传递给Vim.你可以重新映射按键;参阅下面的[设置](https://github.com/Valloric/YouCompleteMe#options)部分.
+
+了解一部分YCM内部工作原理,可以防止一些错误的发生.YCM有几个不同的补全引擎:一个基于你当前文件中的所有identifiers和你浏览文件中的identifiers以及标签并的并在你输入时,自动收集的补全引擎(identifiers被放在per-filetype 组中).
+
+同样YCM也有几个语义补全引擎.有一个基于libclang-based的c系语义补全引擎.一个基于Jedi-based的Python语义补全引擎.另外还有一个基于omnifuc,使用Vim的omnicomplete系统数据的补全引擎.当该YCM中不存在语言的补全引导时,就会调用该引擎.
+
+就如你所想的那样,YCM当然也还有其他补全引擎,比如UltiSnips程序及文件路径补全引擎.
+
+在所有的补全模式下,YCM会自动去选择最优的补全引擎进行补全.偶尔,他会同时将几个不同补全引擎中的内容合并并一起输出到你的补全结果当中.
+
+#### Client-Server 框架
+YCM与一个CS框架,YCM中的vim所呈现的部分只是一个客户端,他与ycmd HTTP +JSON 服务器进行通信，该服务会跟随你开启或关闭vim进行开启或关闭.
+
+**好了基础部分介绍完毕**下面进入配合阶段
+相信你如果坚持阅读到了此处,一定会对YCM有一个整体的大致的印象的!
+
+**注意**由于笔者目前主要使用Python进行编程,故以下配置除通用部分外,已Python为准
+
+set completeopt=longest,menu
+"让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+"离开插入模式后自动关闭预览窗口
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+"映射按键,没有这个会导致其他插件的tab不能用
+let g:ycm_key_list_select_completion=['<c-n>', '<Down>']
+let g:ycm_key_list_previous_completion=['<c-p>', '<Up>']
+let g:ycm_confirm_extra_conf=0                      "关闭加载.ycm_extra_conf.py提示
+let g:ycm_collect_identifiers_from_tags_files = 1   " 开启 YCM基于标签引擎
+let g:ycm_min_num_of_chars_for_completion=2         " 从第2个键入字符就开始罗列匹配项
+let g:ycm_use_ultisnips_completer = 1               " Default 1, just ensure
+let g:ycm_cache_omnifunc=0                          " 禁止缓存匹配项,每次都重新生成匹配项
+let g:ycm_seed_identifiers_with_syntax=1            " 语法关键字补全
+let g:ycm_complete_in_comments = 1                  " 在注
+
+ps:其他语言的配置请参考官方文档,或者等其他人来提交配置,不才就不来献丑了.
