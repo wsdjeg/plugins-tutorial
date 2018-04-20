@@ -384,3 +384,5 @@ let g:ycm_seed_identifiers_with_syntax=1            " 语法关键字补全
 let g:ycm_complete_in_comments = 1                  " 在注
 
 ps:其他语言的配置请参考官方文档,或者等其他人来提交配置,不才就不来献丑了.
+
+# 说一句题外话,抛砖引玉,Vim-chian刚刚起步,希望大家能多少拿出一部分自己宝贵的时间来进行下总结,既可以提升自己又可以帮助后来人何乐而不为呢?
