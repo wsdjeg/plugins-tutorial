@@ -17,6 +17,7 @@ YCM是一个非常有名的vim自动补全插件之一,他的特点是基于语�
 ####Arch
 - 请参照安全安装指导
 - 无需安装python头文件
+
 #### ubuntu
 - 以下内容是基于Vundle插件管理器来进行说明.其他插件管理器同样可以进行参考,详情请参阅你所使用的插件管理的项目主页中的关于手动插件安装的说明
 
@@ -61,6 +62,12 @@ YCM是一个非常有名的vim自动补全插件之一,他的特点是基于语�
 - Rust: 安装[Rust](https://www.rust-lang.org/en-US/)然后执行```./install.py --rust-completer```
 
 - Java: 安装[JDK8 (version 8 required)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)然后执行```./intall.py --java-completer```
+
+是不是觉得很麻烦?别着急有个简单的方法开启全部的语义支持那就是```--all```标志!在此之前,你要先确认下```xbuild```,```go```,```tsserver```,```node```,```node```,```npm```,```rustc```,```cargo```这行工具已经安装.然后执行
+```
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --all
+```
 
 恭喜!你已经安装好了YCM!!但是先别着急我们需要一点别的配置才能让他完美的工作
 
@@ -258,3 +265,80 @@ python install.py --all
 
 恭喜!你已经完成了安装!!不要忘了如果你需要c系语言的语义支持的话,你需要在安装过程中提供标志给YCM.当然.在指导中已经包含了这些内容了.
 YCM为其选项提供了合适的默认值,但是您可以查看使用与配置的内容,并且打开几个默认为关闭的选项.
+
+#### 特性概要快速浏览
+
+##### 普遍特性
+
+- 超快速已识别标签和语法关键字补全
+- 智能补全排序及过滤
+- 文件和路径补全
+- 支持 vim OmniFunc 补全
+- Ultisnips 片段补全
+
+##### C系语言(C,C++,Objective C,Object C++)
+
+- 语义自动补全
+- 实时语法检错
+- Include/declaration/definition跳转(```GoTo```,等等)
+- identifiers的语义类型信息(```GetType```)
+- 自动修复当某些语法错误(```FixIt```)
+- 浏览identitiers的文档信息(```GetDoc```)
+
+##### C#
+- 语义自动补全
+- 实时语法检错
+- 定义/声明跳转(```GoTO```,等等.)
+- indetifiers的语义类型信息(```GetType```)
+- 自动修复某些语法错误(```FixIt```)
+- 管理OmniSharp实例服务
+- 浏览identitiers的文档信息(```GetDoc```)
+
+##### Python
+- 智能补全
+- 定义/声明及帮助文档跳转(```GoTO, GoToReferences```)
+- identifiers文档信息浏览(```GetDoc```)
+- 通过重启[JediHTTP](https://github.com/vheon/JediHTTP)服务,切换不同的Python解释器
+
+##### Go
+- 语义自动补全
+- 定义跳转(```GoTO```)
+- 管理```gocode```服务实例
+
+##### TypeScript
+- 语义自动补全
+- 实时语法检错
+- 标记重命名(```RefactorRename<new name>```)
+- 定义跳转,查找帮助文档(```GoTODefinition, GoToReferences```)
+- identifiers 语义类型信息(```GetType```)
+- 浏览 identifiers文档信息(```GetDoc```)
+
+##### JavaScript
+- 智能补全
+- 变量重命名(```RefactorRename<new name>```)
+- 定义跳转,浏览参考文档(```GoTODefinition, GoToReferences```)
+- 修改 identifiers信息(```GetType```)
+- 浏览identifiers文档信息(```GetDoc```)
+- 管理```Tern```服务实例
+
+##### Rust
+- 语义自动补全
+- 定义跳转(```GoTo, GoToDefinition```和```GoToDeclaration```都是identical)
+- ```racer```实例管理
+- 浏览identifiers文档信息(```GetDoC```)
+
+##### Java
+**小心**Java目前只是实验性支持,请向我们提供[反馈](https://github.com/Valloric/YouCompleteMe#contact),帮助这个项目的发展谢谢!
+
+- 基于自动导入插入的的语义补全(Semantic auto-completion with automatic import insertion)
+- 定义跳转(```GoTO, GoToDefinition```和'GoTODeclaration'都是identical)
+- 帮助文档查询('GoToReferences')
+- 实时语法检错
+- 标记重命令(```RefactorRename<new name>```)
+- 浏览identifiers文档内容(```GetDoc```)
+- 修改identifiers信息(```GetType```)
+- 自动修复包括代码生成(code generation)在内的错误(```FixIt```)
+- 代码格式(```Format```)
+- 选择java项目
+- 管理```jdt.ls```服务实例
+
