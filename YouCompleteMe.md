@@ -367,6 +367,7 @@ YCM与一个CS框架,YCM中的vim所呈现的部分只是一个客户端,他与y
 
 **注意**由于笔者目前主要使用Python进行编程,故以下配置除通用部分外,已Python为准
 
+<<<<<<< HEAD
 set completeopt=longest,menu "让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
 
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif  "离开插入模式后自动关闭预览窗口
@@ -391,6 +392,31 @@ let g:ycm_cache_omnifunc=0                          " 禁止缓存匹配项,每�
 let g:ycm_seed_identifiers_with_syntax=1            " 语法关键字补全
 
 let g:ycm_complete_in_comments = 1                  " 在注
+=======
+```set completeopt=longest,menu```   "让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
+
+```autocmd InsertLeave * if pumvisible() == 0|pclose|endif ```  "离开插入模式后自动关闭预览窗口
+
+```inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"``` "映射按键,没有这个会导致其他插件的tab不能用
+
+```let g:ycm_key_list_select_completion=['<c-n>', '<Down>']```
+
+```let g:ycm_key_list_previous_completion=['<c-p>', '<Up>']```
+
+```let g:ycm_confirm_extra_conf=```                      "关闭加载.ycm_extra_conf.py提示
+
+```let g:ycm_collect_identifiers_from_tags_files = 1```   " 开启 YCM基于标签引
+
+```let g:ycm_min_num_of_chars_for_completion=2```         " 从第2个键入字符就开始罗列匹配项
+
+```let g:ycm_use_ultisnips_completer = 1```               " Default 1, just ensure
+
+```let g:ycm_cache_omnifunc=0```                          " 禁止缓存匹配项,每次都重新生成匹配项
+
+```let g:ycm_seed_identifiers_with_syntax=1```            " 语法关键字补全
+
+```let g:ycm_complete_in_comments = 1```                  " 在注
+>>>>>>> YCM
 
 ps:其他语言的配置请参考官方文档,或者等其他人来提交配置,不才就不来献丑了.
 
