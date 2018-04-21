@@ -368,6 +368,9 @@ YCM与一个CS框架,YCM中的vim所呈现的部分只是一个客户端,他与y
 **注意**由于笔者目前主要使用Python进行编程,故以下配置除通用部分外,已Python为准
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6bb1845ad035e41c0f9bc6691890d76ae88ef3f6
 set completeopt=longest,menu "让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
 
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif  "离开插入模式后自动关闭预览窗口
@@ -392,6 +395,7 @@ let g:ycm_cache_omnifunc=0                          " 禁止缓存匹配项,每�
 let g:ycm_seed_identifiers_with_syntax=1            " 语法关键字补全
 
 let g:ycm_complete_in_comments = 1                  " 在注
+<<<<<<< HEAD
 =======
 ```set completeopt=longest,menu```   "让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
 
@@ -417,6 +421,8 @@ let g:ycm_complete_in_comments = 1                  " 在注
 
 ```let g:ycm_complete_in_comments = 1```                  " 在注
 >>>>>>> YCM
+=======
+>>>>>>> 6bb1845ad035e41c0f9bc6691890d76ae88ef3f6
 
 ps:其他语言的配置请参考官方文档,或者等其他人来提交配置,不才就不来献丑了.
 
