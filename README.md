@@ -1,4 +1,5 @@
 # Vim 插件教程
+
 > 一些常用插件的配置及使用技巧
 
 [![GitHub contributors](https://img.shields.io/github/contributors/vim-china/plugins-tutorial.svg)](https://github.com/vim-china/plugins-tutorial/graphs/contributors)
@@ -13,6 +14,7 @@
 
 ## 自动补全
 
+- [YouCompleteMe](YouCompleteMe.md)
 - neocomplcache
 - neocomplete
 - deoplete
