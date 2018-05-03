@@ -18,3 +18,7 @@
 - neocomplcache
 - neocomplete
 - deoplete
+
+## 工具
+
+- [vim-quickrun](vim-quickrun.md)
