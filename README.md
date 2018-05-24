@@ -18,3 +18,8 @@
 - neocomplcache
 - neocomplete
 - deoplete
+
+## 调试
+
+- [termdebug](termdebug.md)
+- [vdebug](vdebug.md)
