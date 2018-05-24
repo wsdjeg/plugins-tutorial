@@ -84,7 +84,7 @@ GDB 调试常用指令：
  :Arguments {args}  设置下一次运行所用参数
 
  :Break     在当前行加断点
- :Clear     清除当前行的断点
+ :Clear     删除当前行的一个断点
 
  :Step      = gdb "step" 
  :Over      = gdb "next"
@@ -93,7 +93,11 @@ GDB 调试常用指令：
  :Stop      中断程序
 ```
 
-如果觉得手动输入调试指令太麻烦，可以在个人的 `.vimrc` 文件中自定义 keymap 来执行这些命令，如用 `<F9>` 来添加断点等。
+如果觉得手动输入调试指令太麻烦，可以在个人的 `.vimrc` 文件中自定义 keymap 来执行这些命令，如用 `<F9>` 来添加断点：
+
+```
+nnoremap <F9> :Break<CR>
+```
 
 现在我们来演示一下调试上面的已经加载好的 `helloworld` 程序：
 
